@@ -90,16 +90,16 @@ const Navbar = () => {
             clicked={clickedItem === "features"}
             onClick={() => scrollToSection("features")}
           >
-            About Us
+            Features
           </NavLink>
           <NavLink 
-            href="#features" 
-            sectionId="features"
-            active={activeSection === "features"}
-            clicked={clickedItem === "features"}
-            onClick={() => scrollToSection("features")}
+            href="#aboutUs" 
+            sectionId="aboutUs"
+            active={activeSection === "aboutUs"}
+            clicked={clickedItem === "aboutUs"}
+            onClick={() => scrollToSection("aboutUs")}
           >
-            Features
+            About Us
           </NavLink>
           <NavLink 
             href="#testimonials" 

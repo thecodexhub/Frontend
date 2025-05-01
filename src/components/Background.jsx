@@ -16,6 +16,7 @@ uniform float uAmplitude;
 uniform vec3 uColorStops[3];
 uniform vec2 uResolution;
 uniform float uBlend;
+uniform float uOpacity;
 
 out vec4 fragColor;
 
@@ -102,6 +103,9 @@ void main() {
   float midPoint = 0.20;
   float auroraAlpha = smoothstep(midPoint - uBlend * 0.5, midPoint + uBlend * 0.5, intensity);
   
+  // Apply global opacity to the aurora
+  auroraAlpha *= uOpacity;
+  
   vec3 auroraColor = intensity * rampColor;
   
   // Premultiplied alpha output.
@@ -111,9 +115,10 @@ void main() {
 
 export default function Aurora(props) {
   const {
-    colorStops= ["#ef4444", "#ec4899", "#a855f7"],
+    colorStops = ["#ef4444", "#ec4899", "#a855f7"],
     amplitude = 1.0,
-    blend = 0.5
+    blend = 0.5,
+    opacity = 0.6  // Added opacity property with default of 0.6 (60% opacity)
   } = props;
   const propsRef = useRef(props);
   propsRef.current = props;
@@ -166,7 +171,8 @@ export default function Aurora(props) {
         uAmplitude: { value: amplitude },
         uColorStops: { value: colorStopsArray },
         uResolution: { value: [ctn.offsetWidth, ctn.offsetHeight] },
-        uBlend: { value: blend }
+        uBlend: { value: blend },
+        uOpacity: { value: opacity }  // Added opacity uniform
       }
     });
 
@@ -180,6 +186,7 @@ export default function Aurora(props) {
       program.uniforms.uTime.value = time * speed * 0.1;
       program.uniforms.uAmplitude.value = propsRef.current.amplitude ?? 1.0;
       program.uniforms.uBlend.value = propsRef.current.blend ?? blend;
+      program.uniforms.uOpacity.value = propsRef.current.opacity ?? opacity;  // Update opacity from props
       const stops = propsRef.current.colorStops ?? colorStops;
       program.uniforms.uColorStops.value = stops.map((hex) => {
         const c = new Color(hex);
@@ -200,7 +207,7 @@ export default function Aurora(props) {
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [amplitude]);
+  }, [amplitude, opacity]);  // Added opacity to dependency array
 
   return <div ref={ctnDom} className="w-full h-full" />;
 }

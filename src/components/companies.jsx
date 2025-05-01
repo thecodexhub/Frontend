@@ -50,7 +50,7 @@ export default function TrustedPartners() {
   }
 
   return (
-    <div id="features" className="w-full bg-black text-white py-16 px-4 sm:px-8">
+    <div id="aboutUs" className="w-full bg-black text-white py-16 px-4 sm:px-8">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-start">
         <div className="space-y-6">
           <motion.h2
