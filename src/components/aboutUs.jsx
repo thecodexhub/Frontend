@@ -1,5 +1,5 @@
 import React from "react";
-import { CardSpotlight } from "../components/ui/card-spotlight";
+import { CardSpotlight } from "./ui/card-spotlight";
 
 const Step = ({
   title
@@ -38,7 +38,7 @@ export function Features() {
             Placement Preparation, <span className="text-purple-400">Simplified</span>
           </h2>
           <p className="text-gray-400 md:text-lg">
-            Our platform is specifically designed for KK WAGH students, focusing on exactly what you need to ace your
+            Our platform is specifically designed for K.K Wagh students, focusing on exactly what you need to ace your
             campus placements.
           </p>
         </div>

@@ -6,7 +6,7 @@ import Aurora from "../components/Background"
 const AttentionIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="h-5 w-5 text-purple-400"
+    className="h-5 w-5 text-violet-300"
     viewBox="0 0 20 20"
     fill="currentColor"
   >
@@ -38,16 +38,16 @@ export default function LoginPage() {
       {/* Login Modal */}
       <div className="relative z-10 w-full max-w-2xl mx-auto p-4">
         <div className="bg-black/50 backdrop-blur-md rounded-2xl border border-neutral-800/50 shadow-2xl p-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-800 mb-2">
+          <h1 className="text-5xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400 mb-2">
             Welcome Back
           </h1>
-          <p className="text-neutral-400 text-center mb-8">
+          <p className="text-neutral-300 text-center text-lg mb-8">
             Enter your credentials to access your account
           </p>
           
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="email" className="text-neutral-200 text-sm font-medium mb-2 block">
+              <label htmlFor="email" className="text-white text-base font-medium mb-2 block">
                 Email
               </label>
               <input
@@ -56,12 +56,12 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full bg-neutral-800/70 backdrop-blur-sm border border-neutral-700 text-neutral-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all cursor-not-allowed opacity-50"
+                className="w-full bg-neutral-800/70 backdrop-blur-sm border border-neutral-700 text-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all cursor-not-allowed opacity-50"
                 disabled
               />
             </div>
             <div>
-              <label htmlFor="password" className="text-neutral-200 text-sm font-medium mb-2 block">
+              <label htmlFor="password" className="text-white text-base font-medium mb-2 block">
                 Password
               </label>
               <input
@@ -70,23 +70,23 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
-                className="w-full bg-neutral-800/70 backdrop-blur-sm border border-neutral-700 text-neutral-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all cursor-not-allowed opacity-50"
+                className="w-full bg-neutral-800/70 backdrop-blur-sm border border-neutral-700 text-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all cursor-not-allowed opacity-50"
                 disabled
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-purple-600 to-purple-800 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_15px_rgba(147,51,234,0.3)] transform hover:scale-[1.02] active:scale-[0.98] cursor-not-allowed opacity-50"
+              className="w-full bg-gradient-to-r from-violet-600 to-purple-700 text-white font-semibold text-lg py-3 px-4 rounded-lg transition-all duration-300 hover:shadow-[0_0_15px_rgba(147,51,234,0.3)] transform hover:scale-[1.02] active:scale-[0.98] cursor-not-allowed opacity-50"
               disabled
             >
               Sign In
             </button>
 
-            <div className="mt-6 p-4 bg-purple-900/20 border border-purple-800/30 rounded-lg flex items-start gap-3">
+            <div className="mt-6 p-4 bg-purple-900/30 border border-purple-800/40 rounded-lg flex items-start gap-3">
               <div className="mt-0.5">
                 <AttentionIcon />
               </div>
-              <p className="text-purple-300 text-sm">
+              <p className="text-violet-200 text-sm">
                 <span className="font-semibold">Note:</span> Your login credentials will be sent to your registered email address after successful registration. Please check your email for the login details.
               </p>
             </div>
@@ -95,4 +95,4 @@ export default function LoginPage() {
       </div>
     </div>
   )
-} 
+}

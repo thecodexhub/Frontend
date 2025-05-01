@@ -29,37 +29,46 @@ export function Team() {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="relative rounded-xl p-5 text-center border border-neutral-800 bg-neutral-900/40 backdrop-blur-md shadow-md hover:shadow-neutral-700/30 transition-all duration-300 hover:scale-[1.02] hover:border-neutral-700 group"
+              className="relative rounded-xl p-5 text-center bg-neutral-900/40 backdrop-blur-md shadow-md transition-all duration-300 overflow-hidden group"
             >
-              {/* Fancy Gradient Glow Border on hover */}
-              <div className="absolute -inset-0.5 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-neutral-600/50 to-neutral-800/50 z-[-1]" />
+              {/* Colorful border on hover - uses before pseudo-element */}
+              <div className="absolute inset-0 rounded-xl border-2 border-transparent bg-clip-padding transition-colors duration-300 group-hover:border-transparent z-10" />
+              
+              {/* Animated gradient border background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl z-0" />
+              
+              {/* Inner content background */}
+              <div className="absolute inset-0.5 bg-neutral-900 rounded-lg z-10" />
 
-              <h3 className="font-semibold text-white text-xl">{member.name}</h3>
-              <p className="text-neutral-400 text-sm mb-3">{member.role}</p>
+              {/* Content */}
+              <div className="relative z-20">
+                <h3 className="font-semibold text-white text-xl">{member.name}</h3>
+                <p className="text-neutral-400 text-sm mb-3">{member.role}</p>
 
-              <div className="flex justify-center gap-4 mt-2">
-                {member.github && (
-                  <a
-                    href={member.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-neutral-400 hover:text-neutral-300 transition-colors"
-                    aria-label={`${member.name}'s GitHub`}
-                  >
-                    <Github size={20} strokeWidth={1.5} />
-                  </a>
-                )}
-                {member.linkedin && (
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-neutral-400 hover:text-neutral-300 transition-colors"
-                    aria-label={`${member.name}'s LinkedIn`}
-                  >
-                    <Linkedin size={20} strokeWidth={1.5} />
-                  </a>
-                )}
+                <div className="flex justify-center gap-4 mt-2">
+                  {member.github && (
+                    <a
+                      href={member.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-neutral-400 hover:text-neutral-300 transition-colors"
+                      aria-label={`${member.name}'s GitHub`}
+                    >
+                      <Github size={20} strokeWidth={1.5} />
+                    </a>
+                  )}
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-neutral-400 hover:text-neutral-300 transition-colors"
+                      aria-label={`${member.name}'s LinkedIn`}
+                    >
+                      <Linkedin size={20} strokeWidth={1.5} />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}

@@ -1,7 +1,7 @@
 import "./App.css";
 import { BackgroundBeamsDemo } from "./components/waitlist";
 import { Testimonials } from "./components/testimonials";
-import { Features } from "./components/features";
+import { Features } from "./components/aboutUs";
 import { Team } from "./components/team";
 import TrustedPartners from "./components/companies";
 import HeroSection from "./components/HeroSection";

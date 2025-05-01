@@ -61,17 +61,17 @@ const PriceDisplay = () => (
           <p className="text-4xl font-bold text-white mt-1">
             ₹249<span className="text-lg font-normal text-neutral-400">/-</span>
           </p>
-          <p className="text-emerald-400 text-xs mt-1">Valid till 30th May</p>
+          <p className="text-emerald-400 text-xs mt-1">Valid till 31st May</p>
         </div>
 
         <div className="hidden sm:block h-12 w-px bg-neutral-700/50"></div>
 
         <div className="text-center">
           <p className="text-neutral-400 text-sm uppercase tracking-wider font-medium">Regular Price</p>
-          <p className="text-3xl font-bold text-neutral-500 mt-1 line-through">
-            ₹349<span className="text-lg font-normal text-neutral-600">/-</span>
+          <p className="text-3xl font-bold text-neutral-500 mt-1">
+            <span className="line-through">₹349</span><span className="text-lg font-normal text-neutral-600">/-</span>
           </p>
-          <p className="text-neutral-500 text-xs mt-1">After 30th May</p>
+          <p className="text-neutral-500 text-xs mt-1">After 31st May</p>
         </div>
       </div>
     </div>
