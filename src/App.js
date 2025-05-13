@@ -7,7 +7,7 @@ import TrustedPartners from "./components/companies";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LoginPage from "./pages/login";
+import LoginPage from "./components/login";
 
 function App() {
   return (
