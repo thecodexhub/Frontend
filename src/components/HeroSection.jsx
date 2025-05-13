@@ -307,7 +307,7 @@ export default function HeroSection() {
 
                   <div className="mt-2 flex justify-between items-center">
                     <div className="text-[10px] text-gray-400">
-                    <span className="text-purple-300">Note:</span> Season 1 will start in new semester,<span className="text-purple-300"> Tentative:</span> Aug 2025
+                    <span className="text-purple-300">Note:</span> Register Fast !
                     </div>
                     <Button
                       variant="outline"

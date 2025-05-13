@@ -49,6 +49,28 @@ export default function TrustedPartners() {
     show: { opacity: 1, y: 0 },
   }
 
+  // Function to handle the brochure download
+  const handleDownloadBrochure = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    
+    // Set the download link to the PDF file path
+    // Using the same filename as from the uploaded document
+    link.href = '/brochures/WHY CHOOSE CODEX.pdf';
+    
+    // Set the download attribute to suggest filename
+    link.download = 'WHY_CHOOSE_CODEX.pdf';
+    
+    // Append to the document
+    document.body.appendChild(link);
+    
+    // Trigger the click event
+    link.click();
+    
+    // Clean up by removing the link
+    document.body.removeChild(link);
+  };
+
   return (
     <div id="aboutUs" className="w-full bg-black text-white py-16 px-4 sm:px-8">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-start">
@@ -81,7 +103,10 @@ export default function TrustedPartners() {
           </motion.p>
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.6 }}>
-            <button className="mt-2 bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-md transition-all">
+            <button 
+              onClick={handleDownloadBrochure}
+              className="mt-2 bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-md transition-all"
+            >
               Download Brochure
             </button>
           </motion.div>
