@@ -1,4 +1,3 @@
-"use client";
 
 import { useMotionValue, motion, useMotionTemplate } from "motion/react";
 import React, { useState } from "react";
